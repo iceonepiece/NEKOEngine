@@ -8,9 +8,10 @@
 class Texture
 {
 public:
-  Texture(const char* filename, bool alpha = false);
+  Texture();
   ~Texture();
 
+  void Generate(const char* filename, bool alpha = false);
   void Bind();
 
 private:

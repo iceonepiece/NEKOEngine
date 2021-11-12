@@ -8,8 +8,11 @@
 class GUI
 {
 public:
-  GUI(GLFWwindow* window, const char* glslVersion);
+  GUI();
   ~GUI();
+
+  void Init(GLFWwindow* window, const char* glslVersion);
+  void Destroy();
 
   void NewFrame();
   void Draw();

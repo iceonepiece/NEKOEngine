@@ -1,8 +1,12 @@
 #include "Texture.h"
 
-Texture::Texture(const char* filename, bool alpha)
+Texture::Texture()
 {
   glGenTextures(1, &m_ID);
+}
+
+void Texture::Generate(const char* filename, bool alpha)
+{
   glBindTexture(GL_TEXTURE_2D, m_ID); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
   // set the texture wrapping parameters
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)

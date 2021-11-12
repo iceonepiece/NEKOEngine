@@ -7,9 +7,10 @@
 class Shader
 {
 public:
-  Shader(const char* vertexSource, const char* fragmentSource);
+  Shader() {}
   ~Shader();
 
+  void Compile(const char* vertexSource, const char* fragmentSource);
   void Use();
 
   void SetInt(const char* name, int value);
