@@ -1,8 +1,10 @@
 #include <iostream>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
+#include "GUI.h"
 #include "Shader.h"
 #include "Texture.h"
 #include "Sprite.h"
@@ -108,8 +110,12 @@ int main()
   Texture texture2("awesomeface.png", true);
   Sprite sprite(shader);
 
+  GUI gui(window, "#version 330");
+
   while (!glfwWindowShouldClose(window))
   {
+    gui.NewFrame();
+
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -118,6 +124,8 @@ int main()
 
     sprite.Draw(texture1, glm::vec2(0.0f, 0.0f), glm::vec2(300.0f, 400.0f), 0.0f, glm::vec3(0.0f, 1.0f, 0.0f));
     sprite.Draw(texture2, glm::vec2(200.0f, 200.0f), glm::vec2(200.0f, 400.0f), 0.0f);
+
+    gui.Draw();
 
     glfwSwapBuffers(window);
     glfwPollEvents();

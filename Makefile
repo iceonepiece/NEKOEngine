@@ -1,4 +1,4 @@
-OBJS = ./src/*.cpp ./src/*/*/*.c
+OBJS = ./src/*.cpp ./src/*/*/*.cpp ./src/*/*/*.c 
 CC = g++
 COMPILER_FLAGS = -w -std=c++17
 LINKER_FLAGS = -lglfw
