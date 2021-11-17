@@ -15,6 +15,7 @@ public:
   Game(unsigned int width = 1280, unsigned int height = 720);
   ~Game();
 
+  void Init();
   void Run();
 
   GLFWwindow* GetWindow() { return m_window; }
